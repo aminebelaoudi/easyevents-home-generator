@@ -5,25 +5,42 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-semibold font-heading ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-semibold font-heading ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 tracking-tight",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-[var(--shadow-button)]",
-        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-[0_4px_14px_-3px_hsl(30_90%_55%/0.35)]",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
-        hero: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-[var(--shadow-button)] text-base",
-        heroOutline: "border-2 border-primary-foreground/30 text-primary-foreground bg-primary-foreground/10 hover:bg-primary-foreground/20 backdrop-blur-sm text-base",
-        easyflair: "bg-easyflair text-easyflair-foreground hover:bg-easyflair/90",
-        easyflash: "bg-easyflash text-easyflash-foreground hover:bg-easyflash/90",
-        easychallenge: "bg-easychallenge text-easychallenge-foreground hover:bg-easychallenge/90",
+        default:
+          "bg-primary text-primary-foreground hover:bg-primary/90 shadow-[var(--shadow-button-primary)] hover:translate-y-[-1px] active:translate-y-0",
+        destructive:
+          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+        outline:
+          "border-2 border-border bg-background hover:bg-accent hover:border-secondary/40 hover:text-accent-foreground",
+        secondary:
+          "bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-[var(--shadow-button)] hover:translate-y-[-1px] active:translate-y-0",
+        ghost:
+          "hover:bg-accent hover:text-accent-foreground",
+        link:
+          "text-primary underline-offset-4 hover:underline",
+        hero:
+          "bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-[var(--shadow-button)] hover:translate-y-[-1px] active:translate-y-0",
+        heroOutline:
+          "border-2 border-primary-foreground/25 text-primary-foreground bg-transparent hover:bg-primary-foreground/10 backdrop-blur-sm",
+        easyflair:
+          "bg-easyflair text-easyflair-foreground hover:bg-easyflair/90 shadow-[0_4px_14px_-3px_hsl(33_95%_52%/0.40)] hover:translate-y-[-1px] active:translate-y-0",
+        easyflash:
+          "bg-easyflash text-easyflash-foreground hover:bg-easyflash/90 shadow-[0_4px_14px_-3px_hsl(245_80%_64%/0.40)] hover:translate-y-[-1px] active:translate-y-0",
+        easychallenge:
+          "bg-easychallenge text-easychallenge-foreground hover:bg-easychallenge/90 shadow-[0_4px_14px_-3px_hsl(155_70%_38%/0.40)] hover:translate-y-[-1px] active:translate-y-0",
+        easyrelax:
+          "bg-easyrelax text-easyrelax-foreground hover:bg-easyrelax/90 shadow-[0_4px_14px_-3px_hsl(186_80%_42%/0.40)] hover:translate-y-[-1px] active:translate-y-0",
+        easytoilets:
+          "bg-easytoilets text-easytoilets-foreground hover:bg-easytoilets/90 shadow-[0_4px_14px_-3px_hsl(210_65%_55%/0.40)] hover:translate-y-[-1px] active:translate-y-0",
+        festive:
+          "bg-festive text-white hover:bg-festive/90 shadow-[var(--shadow-festive)] hover:translate-y-[-1px] active:translate-y-0",
       },
       size: {
-        default: "h-10 px-4 py-2",
-        sm: "h-9 rounded-md px-3",
+        default: "h-10 px-5 py-2",
+        sm: "h-9 rounded-md px-4 text-xs",
         lg: "h-12 rounded-lg px-8",
         xl: "h-14 rounded-xl px-10 text-base",
         icon: "h-10 w-10",

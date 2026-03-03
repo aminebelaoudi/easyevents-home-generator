@@ -55,15 +55,18 @@ const ProcessCTASection = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-primary rounded-3xl p-10 md:p-16 text-center max-w-4xl mx-auto"
+          className="rounded-3xl p-10 md:p-16 text-center max-w-4xl mx-auto relative overflow-hidden"
+          style={{ background: "linear-gradient(135deg, hsl(220 15% 8%) 0%, hsl(220 20% 14%) 100%)" }}
         >
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
+          {/* Decorative dot-grid texture */}
+          <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
+          <h2 className="relative font-heading text-3xl md:text-4xl font-extrabold text-primary-foreground mb-4 tracking-tight">
             Parlons de votre prochain événement
           </h2>
-          <p className="text-primary-foreground/75 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
+          <p className="relative text-primary-foreground/70 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
             Que vous soyez agence ou entreprise, nous créons des expériences sur mesure en Suisse romande.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="relative flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="secondary" size="xl">
               Demander un devis
             </Button>

@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ["'Space Grotesk'", "sans-serif"],
-        body: ["'DM Sans'", "sans-serif"],
+        heading: ["'Plus Jakarta Sans'", "sans-serif"],
+        body: ["'Inter'", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -66,6 +66,21 @@ export default {
           light: "hsl(var(--easychallenge-light))",
           foreground: "hsl(var(--easychallenge-foreground))",
         },
+        easyrelax: {
+          DEFAULT: "hsl(var(--easyrelax))",
+          light: "hsl(var(--easyrelax-light))",
+          foreground: "hsl(var(--easyrelax-foreground))",
+        },
+        easytoilets: {
+          DEFAULT: "hsl(var(--easytoilets))",
+          light: "hsl(var(--easytoilets-light))",
+          foreground: "hsl(var(--easytoilets-foreground))",
+        },
+        festive: {
+          DEFAULT: "hsl(var(--festival-blue))",
+          deep: "hsl(var(--festival-blue-deep))",
+          foreground: "hsl(var(--festival-blue-foreground))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -94,6 +109,14 @@ export default {
         "fade-up": {
           from: { opacity: "0", transform: "translateY(30px)" },
           to: { opacity: "1", transform: "translateY(0)" },
+        },
+        "slide-in-right": {
+          from: { opacity: "0", transform: "translateX(20px)" },
+          to: { opacity: "1", transform: "translateX(0)" },
+        },
+        shimmer: {
+          from: { backgroundPosition: "200% 0" },
+          to: { backgroundPosition: "-200% 0" },
         },
       },
       animation: {

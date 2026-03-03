@@ -1,30 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Wine, Camera, Trophy } from "lucide-react";
+import { Wine, Camera, Trophy, Coffee, Droplets } from "lucide-react";
 import heroImage from "@/assets/hero-event.jpg";
 
 const miniServices = [
-  {
-    icon: Wine,
-    name: "EasyFlair",
-    desc: "Bars & Cocktails",
-    color: "bg-easyflair",
-    href: "#services",
-  },
-  {
-    icon: Camera,
-    name: "EasyFlash",
-    desc: "Photobooths & Photo",
-    color: "bg-easyflash",
-    href: "#services",
-  },
-  {
-    icon: Trophy,
-    name: "EasyChallenge",
-    desc: "Team building & Animations",
-    color: "bg-easychallenge",
-    href: "#services",
-  },
+  { icon: Wine,     label: "EasyFlair",     href: "/services/easyflair" },
+  { icon: Camera,   label: "EasyFlash",     href: "/services/easyflash" },
+  { icon: Trophy,   label: "EasyChallenge", href: "/services/easychallenge" },
+  { icon: Coffee,   label: "EasyRelax",     href: "/services/easyrelax" },
+  { icon: Droplets, label: "EasyToilets",   href: "/services/easytoilets" },
 ];
 
 const HeroSection = () => {
@@ -34,37 +18,74 @@ const HeroSection = () => {
       <div className="absolute inset-0">
         <img
           src={heroImage}
-          alt="Événement corporate à Genève"
+          alt="Événement festif en Suisse romande"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/75 to-primary/50" />
+        {/* Warm luminous overlay – charcoal dégradé vers doré transparent */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(150deg, hsl(220 20% 6% / 0.88) 0%, hsl(25 30% 12% / 0.72) 45%, hsl(33 60% 55% / 0.28) 100%)",
+          }}
+        />
+        {/* Golden shimmer accent – coin haut droit */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse at 80% 20%, hsl(38 90% 65% / 0.18) 0%, transparent 60%)",
+          }}
+        />
+        {/* Warm vignette bas */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: "linear-gradient(to top, hsl(220 15% 5% / 0.65) 0%, transparent 55%)",
+          }}
+        />
       </div>
 
-      <div className="container mx-auto relative z-10 px-4 pt-24 pb-16 md:pt-32 md:pb-24">
-        <div className="max-w-3xl">
+      <div className="container mx-auto relative z-10 px-4 pt-24 pb-16 md:pt-28 md:pb-20">
+        {/* Location badge */}
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 mb-6"
+        >
+          <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
+          <span className="text-primary-foreground/90 text-xs font-heading font-semibold tracking-widest uppercase">
+            Genève · Suisse romande
+          </span>
+        </motion.div>
+
+        <div className="max-w-2xl mb-6">
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6 text-balance"
+            transition={{ duration: 0.6, delay: 0.08 }}
+            className="font-heading text-3xl md:text-4xl lg:text-[2.9rem] font-extrabold text-primary-foreground leading-[1.12] mb-5 text-balance tracking-tight"
           >
-            Partenaire événementiel moderne pour agences et entreprises en Suisse romande
+            Votre partenaire{" "}
+            <span className="text-secondary">événementiel</span>{" "}
+            haut de gamme
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-            className="text-lg md:text-xl text-primary-foreground/80 mb-8 max-w-2xl leading-relaxed"
+            transition={{ duration: 0.6, delay: 0.18 }}
+            className="text-base md:text-lg text-primary-foreground/75 mb-8 max-w-xl leading-relaxed"
           >
-            EasyEvents Group réunit plusieurs sociétés expertes en bars mobiles, photobooths et animations team building, basées à Genève et actives dans toute la Suisse romande.
+            Bars mobiles, photobooths, team building, espaces lounge et sanitaires premium — tout ce qu'il faut pour un événement inoubliable.
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col sm:flex-row gap-4 mb-16"
+            transition={{ duration: 0.6, delay: 0.28 }}
+            className="flex flex-col sm:flex-row gap-3"
           >
             <Button variant="secondary" size="xl" asChild>
               <a href="#services">Découvrir nos services</a>
@@ -75,30 +96,30 @@ const HeroSection = () => {
           </motion.div>
         </div>
 
-        {/* Mini service cards */}
+        {/* Compact service icons row */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.5 }}
-          className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.44 }}
+          className="flex items-center gap-4 mt-10"
         >
-          {miniServices.map((s) => (
-            <a
-              key={s.name}
-              href={s.href}
-              className="flex items-center gap-4 bg-primary-foreground/10 backdrop-blur-md rounded-xl p-4 border border-primary-foreground/15 hover:bg-primary-foreground/20 transition-all duration-200 group"
-            >
-              <div className={`${s.color} rounded-lg p-2.5 text-primary-foreground`}>
-                <s.icon size={22} />
-              </div>
-              <div>
-                <div className="font-heading font-semibold text-primary-foreground text-sm">
-                  {s.name}
-                </div>
-                <div className="text-primary-foreground/60 text-xs">{s.desc}</div>
-              </div>
-            </a>
-          ))}
+          <span className="text-white/30 text-[11px] font-heading font-medium tracking-wide uppercase hidden sm:block">Nos expertises</span>
+          <span className="w-6 h-px bg-white/15 hidden sm:block" />
+          <div className="flex items-center gap-2">
+            {miniServices.map((s, i) => (
+              <motion.a
+                key={s.label}
+                href={s.href}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3, delay: 0.5 + i * 0.06 }}
+                className="flex items-center gap-1.5 bg-white/[0.07] backdrop-blur-sm rounded-full px-3 py-1.5 border border-white/[0.08] hover:bg-white/[0.13] hover:border-secondary/30 transition-all duration-300 cursor-pointer"
+              >
+                <s.icon size={13} className="text-secondary/80" />
+                <span className="text-white/70 text-[11px] font-medium whitespace-nowrap">{s.label}</span>
+              </motion.a>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>

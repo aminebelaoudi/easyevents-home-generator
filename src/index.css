@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,58 +6,83 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 220 30% 15%;
+    /* ─── Base ─────────────────────────────────────────────── */
+    --background: 36 25% 98%;          /* warm near-white */
+    --foreground: 220 15% 8%;          /* near-black charcoal */
 
     --card: 0 0% 100%;
-    --card-foreground: 220 30% 15%;
+    --card-foreground: 220 15% 8%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 30% 15%;
+    --popover-foreground: 220 15% 8%;
 
-    --primary: 220 70% 22%;
+    /* ─── Primary – Near-Black Charcoal (élégance + contraste) ─ */
+    --primary: 220 15% 8%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 30 90% 55%;
-    --secondary-foreground: 0 0% 100%;
+    /* ─── Secondary – Beige Doré #e7b683 (chaleur + premium) ─── */
+    --secondary: 33 67% 71%;           /* #e7b683 */
+    --secondary-foreground: 220 15% 8%;
 
-    --muted: 220 20% 96%;
-    --muted-foreground: 220 15% 50%;
+    /* ─── Festival Blue – Bleu Ciel Éclatant (festif + moderne) ─ */
+    --festival-blue: 200 100% 55%;     /* sky blue lumineux */
+    --festival-blue-deep: 210 80% 22%; /* bleu profond pour overlay */
+    --festival-blue-foreground: 0 0% 100%;
 
-    --accent: 220 20% 96%;
-    --accent-foreground: 220 70% 22%;
+    /* ─── Neutrals ───────────────────────────────────────────── */
+    --muted: 33 20% 95%;               /* warm muted */
+    --muted-foreground: 215 12% 48%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --accent: 33 30% 93%;
+    --accent-foreground: 220 15% 8%;
 
-    --border: 220 15% 90%;
-    --input: 220 15% 90%;
-    --ring: 220 70% 22%;
+    --destructive: 0 84% 58%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 33 18% 88%;
+    --input: 215 18% 88%;
+    --ring: 33 67% 71%;
 
     --radius: 0.75rem;
 
-    /* Service colors */
-    --easyflair: 12 85% 58%;
-    --easyflair-light: 12 85% 95%;
+    /* ─── Service palette ──────────────────────────────────── */
+    --easyflair: 33 95% 52%;           /* Amber warm */
+    --easyflair-light: 33 100% 96%;
     --easyflair-foreground: 0 0% 100%;
 
-    --easyflash: 280 65% 55%;
-    --easyflash-light: 280 65% 95%;
+    --easyflash: 245 80% 64%;          /* Indigo */
+    --easyflash-light: 245 80% 97%;
     --easyflash-foreground: 0 0% 100%;
 
-    --easychallenge: 150 60% 42%;
-    --easychallenge-light: 150 60% 95%;
+    --easychallenge: 155 70% 38%;      /* Emerald */
+    --easychallenge-light: 155 70% 96%;
     --easychallenge-foreground: 0 0% 100%;
 
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(220 70% 22%) 0%, hsl(220 60% 35%) 100%);
-    --gradient-cta: linear-gradient(135deg, hsl(220 70% 18%) 0%, hsl(220 60% 30%) 100%);
+    --easyrelax: 186 80% 42%;          /* Teal apaisant */
+    --easyrelax-light: 186 80% 96%;
+    --easyrelax-foreground: 0 0% 100%;
 
-    /* Shadows */
-    --shadow-card: 0 4px 24px -4px hsl(220 30% 15% / 0.08);
-    --shadow-card-hover: 0 12px 40px -8px hsl(220 30% 15% / 0.15);
-    --shadow-button: 0 4px 14px -3px hsl(220 70% 22% / 0.35);
+    --easytoilets: 210 65% 55%;        /* Sky blue propre */
+    --easytoilets-light: 210 65% 97%;
+    --easytoilets-foreground: 0 0% 100%;
 
+    /* ─── Gradients ──────────────────────────────────────── */
+    --gradient-hero: linear-gradient(150deg,
+      hsl(210 80% 18% / 0.95) 0%,
+      hsl(200 100% 30% / 0.88) 50%,
+      hsl(195 100% 52% / 0.55) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(220 15% 7%) 0%, hsl(220 20% 14%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(33 67% 71%) 0%, hsl(28 90% 60%) 100%);
+    --gradient-festive: linear-gradient(135deg, hsl(200 100% 55%) 0%, hsl(210 80% 45%) 100%);
+
+    /* ─── Shadows ─────────────────────────────────────────── */
+    --shadow-card:       0 2px 16px -4px hsl(220 15% 8% / 0.07), 0 1px 2px hsl(220 15% 8% / 0.04);
+    --shadow-card-hover: 0 20px 50px -12px hsl(220 15% 8% / 0.16), 0 4px 8px hsl(220 15% 8% / 0.06);
+    --shadow-button:     0 4px 18px -4px hsl(33 67% 71% / 0.50);
+    --shadow-button-primary: 0 4px 18px -4px hsl(220 15% 8% / 0.40);
+    --shadow-festive:    0 8px 28px -6px hsl(200 100% 55% / 0.40);
+
+    /* ─── Sidebar ─────────────────────────────────────────── */
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -74,21 +99,27 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground font-body antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: -0.02em;
   }
 }
 
 @layer utilities {
   .font-heading {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
   }
   .font-body {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
   }
   .text-balance {
     text-wrap: balance;
@@ -98,5 +129,25 @@
   }
   .shadow-card-hover {
     box-shadow: var(--shadow-card-hover);
+  }
+  /* Premium glass effect for navbar */
+  .glass-nav {
+    background: hsl(var(--background) / 0.88);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid hsl(var(--border) / 0.5);
+  }
+  /* Gradient text utilities */
+  .text-gradient-gold {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-gradient-festive {
+    background: var(--gradient-festive);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }

@@ -40,10 +40,10 @@ const TargetSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.15 }}
-              className="bg-card rounded-2xl p-8 shadow-card hover:shadow-card-hover transition-all duration-300 border border-border"
+              className="bg-card rounded-2xl p-8 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 group border border-border/50"
             >
-              <div className="bg-primary/10 rounded-xl p-3 w-fit mb-5">
-                <t.icon size={28} className="text-primary" />
+              <div className="bg-secondary/15 group-hover:bg-secondary/25 rounded-xl p-3 w-fit mb-5 transition-colors">
+                <t.icon size={28} className="text-secondary" />
               </div>
               <h3 className="font-heading text-xl font-bold text-foreground mb-3">
                 {t.title}

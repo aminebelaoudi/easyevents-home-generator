@@ -4,11 +4,10 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { label: "Accueil", href: "#" },
-  { label: "Services", href: "#services" },
-  { label: "Pour qui ?", href: "#targets" },
-  { label: "Réalisations", href: "#showcase" },
-  { label: "Contact", href: "#cta-final" },
+  { label: "Accueil", href: "/" },
+  { label: "Services", href: "/#services" },
+  { label: "Réalisations", href: "/#showcase" },
+  { label: "Contact", href: "/#cta-final" },
 ];
 
 const Navbar = () => {
@@ -25,33 +24,36 @@ const Navbar = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-background/95 backdrop-blur-md shadow-card border-b border-border"
+          ? "glass-nav shadow-[0_1px_0_0_hsl(215_20%_88%)] border-b border-border/50"
           : "bg-transparent"
       }`}
     >
       <div className="container mx-auto flex items-center justify-between h-16 md:h-20 px-4">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2">
+        <a href="/" className="flex items-center gap-2">
           <span className={`font-heading font-bold text-xl md:text-2xl transition-colors ${scrolled ? "text-primary" : "text-primary-foreground"}`}>
             Easy<span className="text-secondary">Events</span> Group
           </span>
         </a>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-7">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className={`text-sm font-medium transition-colors hover:text-secondary ${
-                scrolled ? "text-foreground" : "text-primary-foreground/80"
+              className={`text-sm font-medium tracking-tight transition-colors relative group ${
+                scrolled ? "text-foreground hover:text-secondary" : "text-primary-foreground/80 hover:text-primary-foreground"
               }`}
             >
               {link.label}
+              <span className={`absolute -bottom-0.5 left-0 h-px w-0 group-hover:w-full transition-all duration-300 ${
+                scrolled ? "bg-secondary" : "bg-primary-foreground/60"
+              }`} />
             </a>
           ))}
           <Button variant={scrolled ? "secondary" : "heroOutline"} size="default" asChild>
-            <a href="#cta-final">Demander un devis</a>
+            <a href="/#cta-final">Demander un devis</a>
           </Button>
         </nav>
 
@@ -90,7 +92,7 @@ const Navbar = () => {
                 </a>
               ))}
               <Button variant="secondary" size="lg" className="mt-2" asChild>
-                <a href="#cta-final" onClick={() => setMobileOpen(false)}>
+                <a href="/#cta-final" onClick={() => setMobileOpen(false)}>
                   Demander un devis
                 </a>
               </Button>

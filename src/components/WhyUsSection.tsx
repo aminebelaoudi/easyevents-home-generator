@@ -34,7 +34,7 @@ const WhyUsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="text-center p-6"
+              className="text-center p-6 rounded-2xl hover:bg-card hover:shadow-card transition-all duration-300 group border border-transparent hover:border-border/50"
             >
               <div className="bg-secondary/10 rounded-2xl p-4 w-fit mx-auto mb-4">
                 <r.icon size={28} className="text-secondary" />
