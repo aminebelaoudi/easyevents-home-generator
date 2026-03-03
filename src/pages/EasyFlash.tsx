@@ -10,6 +10,9 @@ import heroImg from "@/assets/hero-event.jpg";
 import easychallengeImg from "@/assets/easychallenge-team.jpg";
 import easyflairImg from "@/assets/easyflair-bar.jpg";
 import easytoiletImg from "@/assets/easytoilet.png";
+import easyboxImg from "@/assets/easy box.png";
+import easybox360Img from "@/assets/EasyBox 360.png";
+import easyboxMiroirImg from "@/assets/EasyBox Miroir.png";
 /* ─── Products ─────────────────────────────────────────── */
 const products = [
   {
@@ -19,7 +22,7 @@ const products = [
     desc: "Le modèle EasyBox s'adapte à tous vos évènements et offre une impression de photo instantanée.",
     price: "À partir de 349.-",
     currency: "CHF",
-    image: easyflashImg,
+    image: easyboxImg,
     tag: "Populaire",
     features: ["Impression instantanée", "Entièrement personnalisable", "Interface tactile intuitive", "Livraison & installation incluses"],
   },
@@ -30,7 +33,7 @@ const products = [
     desc: "Cette EasyBox exceptionnelle crée des vidéos et selfies circulaires grâce à son rotatif 360°.",
     price: "À partir de 690.-",
     currency: "CHF",
-    image: heroImg,
+    image: easybox360Img,
     tag: "Best-seller",
     features: ["Rotatif 360° motorisé", "Vidéos & selfies circulaires", "Partage instantané", "Décor et habillage inclus"],
   },
@@ -41,7 +44,7 @@ const products = [
     desc: "Ce Photobooth à effet Miroir, idéal pour les soirées à thème, offrira une animation glamour à vos évènements.",
     price: "À partir de 690.-",
     currency: "CHF",
-    image: easychallengeImg,
+    image: easyboxMiroirImg,
     tag: "Prestige",
     features: ["Effet miroir pleine hauteur", "Idéal soirées à thème", "Cadre habillable au choix", "Animations interactives"],
   },
