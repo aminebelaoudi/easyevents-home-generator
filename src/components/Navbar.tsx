@@ -30,10 +30,32 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between h-16 md:h-20 px-4">
         {/* Logo */}
-        <a href="/" className="flex items-center gap-2">
-          <span className={`font-heading font-bold text-xl md:text-2xl transition-colors ${scrolled ? "text-primary" : "text-primary-foreground"}`}>
-            Easy<span className="text-secondary">Events</span> Group
-          </span>
+        <a href="/" className="flex items-center gap-2.5 group select-none">
+          {/* Icon mark */}
+          <div className="relative flex-shrink-0">
+            <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+              {/* Diamond background */}
+              <path d="M17 1L33 17L17 33L1 17Z" fill="hsl(33,67%,71%)" className="transition-all duration-300 group-hover:fill-[hsl(33,75%,65%)]"/>
+              {/* E bars */}
+              <rect x="9.5" y="11.5" width="15" height="2.5" rx="1.25" fill="hsl(220,15%,8%)"/>
+              <rect x="9.5" y="15.75" width="10" height="2.5" rx="1.25" fill="hsl(220,15%,8%)"/>
+              <rect x="9.5" y="20" width="15" height="2.5" rx="1.25" fill="hsl(220,15%,8%)"/>
+            </svg>
+            {/* Subtle glow on scroll */}
+            {scrolled && (
+              <div className="absolute inset-0 rounded-full opacity-30 blur-md bg-secondary pointer-events-none" />
+            )}
+          </div>
+
+          {/* Wordmark */}
+          <div className="flex flex-col leading-none">
+            <span className={`font-heading font-black text-[17px] md:text-[19px] tracking-tight transition-colors ${scrolled ? "text-primary" : "text-primary-foreground"}`}>
+              Easy<span className="text-secondary">Events</span>
+            </span>
+            <span className={`font-heading font-medium text-[9px] uppercase tracking-[0.25em] transition-colors leading-none mt-[2px] ${scrolled ? "text-primary/40" : "text-primary-foreground/40"}`}>
+              Group
+            </span>
+          </div>
         </a>
 
         {/* Desktop nav */}
