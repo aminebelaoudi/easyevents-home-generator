@@ -1,15 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Wine, Camera, Trophy, Coffee, Droplets } from "lucide-react";
 import heroImage from "@/assets/hero-event.jpg";
-
-const miniServices = [
-  { icon: Wine,     label: "EasyFlair",     href: "/services/easyflair" },
-  { icon: Camera,   label: "EasyFlash",     href: "/services/easyflash" },
-  { icon: Trophy,   label: "EasyChallenge", href: "/services/easychallenge" },
-  { icon: Coffee,   label: "EasyRelax",     href: "/services/easyrelax" },
-  { icon: Droplets, label: "EasyToilets",   href: "/services/easytoilets" },
-];
 
 const HeroSection = () => {
   return (
@@ -26,15 +17,15 @@ const HeroSection = () => {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(150deg, hsl(220 20% 6% / 0.88) 0%, hsl(25 30% 12% / 0.72) 45%, hsl(33 60% 55% / 0.28) 100%)",
+              "linear-gradient(150deg, hsl(230 28% 8% / 0.9) 0%, hsl(245 45% 18% / 0.78) 48%, hsl(200 100% 52% / 0.3) 100%)",
           }}
         />
-        {/* Golden shimmer accent – coin haut droit */}
+        {/* Modern shimmer accent – coin haut droit */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse at 80% 20%, hsl(38 90% 65% / 0.18) 0%, transparent 60%)",
+              "radial-gradient(ellipse at 80% 20%, hsl(245 80% 64% / 0.2) 0%, transparent 60%)",
           }}
         />
         {/* Warm vignette bas */}
@@ -54,7 +45,7 @@ const HeroSection = () => {
           transition={{ duration: 0.5 }}
           className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 mb-6"
         >
-          <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
+          <span className="w-2 h-2 rounded-full bg-gradient-to-r from-easyflash via-easychallenge to-easytoilets animate-pulse" />
           <span className="text-primary-foreground/90 text-xs font-heading font-semibold tracking-widest uppercase">
             Genève · Suisse romande
           </span>
@@ -68,7 +59,7 @@ const HeroSection = () => {
             className="font-heading text-3xl md:text-4xl lg:text-[2.9rem] font-extrabold text-primary-foreground leading-[1.12] mb-5 text-balance tracking-tight"
           >
             Votre partenaire{" "}
-            <span className="text-secondary">événementiel</span>{" "}
+            <span className="text-gradient-festive">événementiel</span>{" "}
             haut de gamme
           </motion.h1>
 
@@ -90,37 +81,30 @@ const HeroSection = () => {
             <Button variant="secondary" size="xl" asChild>
               <a href="#services">Découvrir nos services</a>
             </Button>
-            <Button variant="heroOutline" size="xl" asChild>
-              <a href="#cta-final">Demander un devis</a>
-            </Button>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.34 }}
+            className="flex flex-wrap items-center gap-3 mt-5"
+          >
+            {[
+              { name: "EasyFlair", dot: "bg-easyflair" },
+              { name: "EasyFlash", dot: "bg-easyflash" },
+              { name: "EasyChallenge", dot: "bg-easychallenge" },
+              { name: "EasyRelax", dot: "bg-easyrelax" },
+              { name: "EasyToilets", dot: "bg-easytoilets" },
+            ].map((service) => (
+              <span key={service.name} className="inline-flex items-center gap-1.5 text-primary-foreground/75 text-xs font-heading font-semibold tracking-wide">
+                <span className={`w-2 h-2 rounded-full ${service.dot}`} />
+                {service.name}
+              </span>
+            ))}
           </motion.div>
         </div>
 
-        {/* Compact service icons row */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.44 }}
-          className="flex items-center gap-4 mt-10"
-        >
-          <span className="text-white/30 text-[11px] font-heading font-medium tracking-wide uppercase hidden sm:block">Nos expertises</span>
-          <span className="w-6 h-px bg-white/15 hidden sm:block" />
-          <div className="flex items-center gap-2">
-            {miniServices.map((s, i) => (
-              <motion.a
-                key={s.label}
-                href={s.href}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.3, delay: 0.5 + i * 0.06 }}
-                className="flex items-center gap-1.5 bg-white/[0.07] backdrop-blur-sm rounded-full px-3 py-1.5 border border-white/[0.08] hover:bg-white/[0.13] hover:border-secondary/30 transition-all duration-300 cursor-pointer"
-              >
-                <s.icon size={13} className="text-secondary/80" />
-                <span className="text-white/70 text-[11px] font-medium whitespace-nowrap">{s.label}</span>
-              </motion.a>
-            ))}
-          </div>
-        </motion.div>
+
       </div>
     </section>
   );

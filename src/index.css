@@ -20,9 +20,9 @@
     --primary: 220 15% 8%;
     --primary-foreground: 0 0% 100%;
 
-    /* ─── Secondary – Beige Doré #e7b683 (chaleur + premium) ─── */
-    --secondary: 33 67% 71%;           /* #e7b683 */
-    --secondary-foreground: 220 15% 8%;
+    /* ─── Secondary – Group accent (neutral across services) ─── */
+    --secondary: 262 84% 63%;
+    --secondary-foreground: 0 0% 100%;
 
     /* ─── Festival Blue – Bleu Ciel Éclatant (festif + moderne) ─ */
     --festival-blue: 200 100% 55%;     /* sky blue lumineux */
@@ -30,18 +30,18 @@
     --festival-blue-foreground: 0 0% 100%;
 
     /* ─── Neutrals ───────────────────────────────────────────── */
-    --muted: 33 20% 95%;               /* warm muted */
+    --muted: 245 24% 95%;
     --muted-foreground: 215 12% 48%;
 
-    --accent: 33 30% 93%;
+    --accent: 245 40% 93%;
     --accent-foreground: 220 15% 8%;
 
     --destructive: 0 84% 58%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 33 18% 88%;
+    --border: 235 22% 88%;
     --input: 215 18% 88%;
-    --ring: 33 67% 71%;
+    --ring: 262 84% 63%;
 
     --radius: 0.75rem;
 
@@ -72,13 +72,13 @@
       hsl(200 100% 30% / 0.88) 50%,
       hsl(195 100% 52% / 0.55) 100%);
     --gradient-cta: linear-gradient(135deg, hsl(220 15% 7%) 0%, hsl(220 20% 14%) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(33 67% 71%) 0%, hsl(28 90% 60%) 100%);
-    --gradient-festive: linear-gradient(135deg, hsl(200 100% 55%) 0%, hsl(210 80% 45%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(var(--easyflash)) 0%, hsl(var(--easytoilets)) 38%, hsl(var(--easychallenge)) 70%, hsl(var(--easyflair)) 100%);
+    --gradient-festive: linear-gradient(135deg, hsl(var(--easyflash)) 0%, hsl(var(--easyrelax)) 45%, hsl(var(--easychallenge)) 100%);
 
     /* ─── Shadows ─────────────────────────────────────────── */
     --shadow-card:       0 2px 16px -4px hsl(220 15% 8% / 0.07), 0 1px 2px hsl(220 15% 8% / 0.04);
     --shadow-card-hover: 0 20px 50px -12px hsl(220 15% 8% / 0.16), 0 4px 8px hsl(220 15% 8% / 0.06);
-    --shadow-button:     0 4px 18px -4px hsl(33 67% 71% / 0.50);
+    --shadow-button:     0 6px 22px -6px hsl(262 84% 63% / 0.5);
     --shadow-button-primary: 0 4px 18px -4px hsl(220 15% 8% / 0.40);
     --shadow-festive:    0 8px 28px -6px hsl(200 100% 55% / 0.40);
 
@@ -149,5 +149,31 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+  .service-glow-easyflair {
+    box-shadow: inset 0 0 0 1.5px hsl(var(--easyflair)), 0 0 40px -8px hsl(var(--easyflair));
+  }
+  .service-glow-easyflash {
+    box-shadow: inset 0 0 0 1.5px hsl(var(--easyflash)), 0 0 40px -8px hsl(var(--easyflash));
+  }
+  .service-glow-easychallenge {
+    box-shadow: inset 0 0 0 1.5px hsl(var(--easychallenge)), 0 0 40px -8px hsl(var(--easychallenge));
+  }
+  .service-glow-easyrelax {
+    box-shadow: inset 0 0 0 1.5px hsl(var(--easyrelax)), 0 0 40px -8px hsl(var(--easyrelax));
+  }
+  .service-glow-easytoilets {
+    box-shadow: inset 0 0 0 1.5px hsl(var(--easytoilets)), 0 0 40px -8px hsl(var(--easytoilets));
+  }
+
+  .service-theme-easyflash {
+    --secondary: var(--easyflash);
+    --secondary-foreground: 0 0% 100%;
+    --ring: var(--easyflash);
+    --muted: 245 70% 97%;
+    --accent: 245 65% 95%;
+    --border: 245 30% 88%;
+    --gradient-gold: linear-gradient(135deg, hsl(var(--easyflash)) 0%, hsl(200 100% 55%) 100%);
+    --shadow-button: 0 6px 22px -6px hsl(var(--easyflash) / 0.55);
   }
 }

@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { MapPin, Clock, Users, Sparkles } from "lucide-react";
 
 const reasons = [
-  { icon: MapPin, text: "Basés à Genève, actifs partout en Suisse romande" },
-  { icon: Clock, text: "Plus de 10 ans d'expérience événementielle" },
-  { icon: Users, text: "Un groupe de spécialistes, un interlocuteur unique" },
-  { icon: Sparkles, text: "Solutions sur mesure pour chaque événement" },
+  { icon: MapPin, text: "Basés à Genève, actifs partout en Suisse romande", iconClass: "text-easyflash", iconBgClass: "bg-easyflash/15" },
+  { icon: Clock, text: "Plus de 10 ans d'expérience événementielle", iconClass: "text-easyflair", iconBgClass: "bg-easyflair/15" },
+  { icon: Users, text: "Un groupe de spécialistes, un interlocuteur unique", iconClass: "text-easychallenge", iconBgClass: "bg-easychallenge/15" },
+  { icon: Sparkles, text: "Solutions sur mesure pour chaque événement", iconClass: "text-easyrelax", iconBgClass: "bg-easyrelax/15" },
 ];
 
 const WhyUsSection = () => {
@@ -18,11 +18,11 @@ const WhyUsSection = () => {
           viewport={{ once: true }}
           className="text-center mb-14"
         >
-          <span className="text-secondary font-heading font-semibold text-sm uppercase tracking-widest mb-3 block">
+          <span className="text-easyflash font-heading font-semibold text-sm uppercase tracking-widest mb-3 block">
             Pourquoi nous ?
           </span>
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground">
-            Pourquoi choisir EasyEvents Group ?
+            Pourquoi choisir <span className="text-gradient-festive">EasyEvents Group</span> ?
           </h2>
         </motion.div>
 
@@ -36,8 +36,8 @@ const WhyUsSection = () => {
               transition={{ delay: i * 0.1 }}
               className="text-center p-6 rounded-2xl hover:bg-card hover:shadow-card transition-all duration-300 group border border-transparent hover:border-border/50"
             >
-              <div className="bg-secondary/10 rounded-2xl p-4 w-fit mx-auto mb-4">
-                <r.icon size={28} className="text-secondary" />
+              <div className={`${r.iconBgClass} rounded-2xl p-4 w-fit mx-auto mb-4`}>
+                <r.icon size={28} className={r.iconClass} />
               </div>
               <p className="font-heading font-semibold text-foreground text-sm leading-relaxed">
                 {r.text}

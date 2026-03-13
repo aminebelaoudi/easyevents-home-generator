@@ -3,9 +3,9 @@ import { Button } from "@/components/ui/button";
 import { MessageSquare, Puzzle, PartyPopper } from "lucide-react";
 
 const steps = [
-  { icon: MessageSquare, label: "Vous nous parlez de votre événement" },
-  { icon: Puzzle, label: "Nous assemblons les services adaptés" },
-  { icon: PartyPopper, label: "Nous coordonnons la prestation le jour J" },
+  { icon: MessageSquare, label: "Vous nous parlez de votre événement", iconClass: "text-easyflash", iconBgClass: "bg-easyflash/15", badgeClass: "bg-easyflash text-white" },
+  { icon: Puzzle, label: "Nous assemblons les services adaptés", iconClass: "text-easychallenge", iconBgClass: "bg-easychallenge/15", badgeClass: "bg-easychallenge text-white" },
+  { icon: PartyPopper, label: "Nous coordonnons la prestation le jour J", iconClass: "text-easyrelax", iconBgClass: "bg-easyrelax/15", badgeClass: "bg-easyrelax text-white" },
 ];
 
 const ProcessCTASection = () => {
@@ -37,9 +37,9 @@ const ProcessCTASection = () => {
               transition={{ delay: i * 0.15 }}
               className="text-center"
             >
-              <div className="bg-secondary/10 rounded-2xl p-4 w-fit mx-auto mb-4 relative">
-                <s.icon size={28} className="text-secondary" />
-                <span className="absolute -top-2 -right-2 bg-secondary text-secondary-foreground text-xs font-heading font-bold w-6 h-6 rounded-full flex items-center justify-center">
+              <div className={`${s.iconBgClass} rounded-2xl p-4 w-fit mx-auto mb-4 relative`}>
+                <s.icon size={28} className={s.iconClass} />
+                <span className={`absolute -top-2 -right-2 text-xs font-heading font-bold w-6 h-6 rounded-full flex items-center justify-center ${s.badgeClass}`}>
                   {i + 1}
                 </span>
               </div>
@@ -56,7 +56,7 @@ const ProcessCTASection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="rounded-3xl p-10 md:p-16 text-center max-w-4xl mx-auto relative overflow-hidden"
-          style={{ background: "linear-gradient(135deg, hsl(220 15% 8%) 0%, hsl(220 20% 14%) 100%)" }}
+          style={{ background: "linear-gradient(135deg, hsl(234 28% 10%) 0%, hsl(245 55% 20%) 58%, hsl(200 100% 40%) 100%)" }}
         >
           {/* Decorative dot-grid texture */}
           <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
@@ -67,9 +67,6 @@ const ProcessCTASection = () => {
             Que vous soyez agence ou entreprise, nous créons des expériences sur mesure en Suisse romande.
           </p>
           <div className="relative flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="secondary" size="xl">
-              Demander un devis
-            </Button>
             <Button variant="heroOutline" size="xl" asChild>
               <a href="#services">Découvrir nos services</a>
             </Button>

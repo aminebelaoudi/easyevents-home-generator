@@ -6,10 +6,6 @@ import easychallengeImg from "@/assets/easychallenge-team.jpg";
 import heroImg from "@/assets/hero-event.jpg";
 import easytoiletImg from "@/assets/easytoilet.png";
 
-// Unified brand color — beige doré secondaire
-const ACCENT = "hsl(33, 67%, 71%)";
-const ACCENT_ALPHA = "hsla(33, 67%, 71%, 0.20)";
-
 const services = [
   {
     id: "easyflair",
@@ -20,6 +16,10 @@ const services = [
     image: easyflairImg,
     gridClass: "md:col-span-2 lg:col-span-2",
     href: "/services/easyflair",
+    badgeClass: "bg-easyflair text-easyflair-foreground",
+    iconClass: "text-easyflair",
+    iconBgClass: "bg-easyflair/20",
+    glowClass: "service-glow-easyflair",
   },
   {
     id: "easyflash",
@@ -30,6 +30,10 @@ const services = [
     image: easyflashImg,
     gridClass: "lg:col-span-2",
     href: "/services/easyflash",
+    badgeClass: "bg-easyflash text-easyflash-foreground",
+    iconClass: "text-easyflash",
+    iconBgClass: "bg-easyflash/20",
+    glowClass: "service-glow-easyflash",
   },
   {
     id: "easychallenge",
@@ -40,6 +44,10 @@ const services = [
     image: easychallengeImg,
     gridClass: "",
     href: "/services/easychallenge",
+    badgeClass: "bg-easychallenge text-easychallenge-foreground",
+    iconClass: "text-easychallenge",
+    iconBgClass: "bg-easychallenge/20",
+    glowClass: "service-glow-easychallenge",
   },
   {
     id: "easyrelax",
@@ -50,6 +58,10 @@ const services = [
     image: heroImg,
     gridClass: "",
     href: "/services/easyrelax",
+    badgeClass: "bg-easyrelax text-easyrelax-foreground",
+    iconClass: "text-easyrelax",
+    iconBgClass: "bg-easyrelax/20",
+    glowClass: "service-glow-easyrelax",
   },
   {
     id: "easytoilets",
@@ -60,6 +72,10 @@ const services = [
     image: easytoiletImg,
     gridClass: "lg:col-span-2",
     href: "/services/easytoilets",
+    badgeClass: "bg-easytoilets text-easytoilets-foreground",
+    iconClass: "text-easytoilets",
+    iconBgClass: "bg-easytoilets/20",
+    glowClass: "service-glow-easytoilets",
   },
 ];
 
@@ -122,10 +138,7 @@ const ServicesSection = () => {
               <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-black/[0.06] pointer-events-none z-10" />
 
               {/* Unified brand glow on hover */}
-              <div
-                className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10"
-                style={{ boxShadow: `inset 0 0 0 1.5px ${ACCENT}, 0 0 40px -8px ${ACCENT}` }}
-              />
+              <div className={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10 ${s.glowClass}`} />
 
               {/* Number watermark */}
               <span className="absolute top-1 left-4 font-heading text-white/[0.06] text-[5.5rem] font-black leading-none select-none pointer-events-none">
@@ -134,10 +147,7 @@ const ServicesSection = () => {
 
               {/* Badge – fades out on hover */}
               <div className="absolute top-4 right-4 z-20 group-hover:opacity-0 transition-opacity duration-200">
-                <span
-                  className="px-3 py-1 rounded-full text-[10px] font-heading font-bold tracking-wider shadow-lg"
-                  style={{ backgroundColor: ACCENT, color: "hsl(220, 15%, 8%)" }}
-                >
+                <span className={`px-3 py-1 rounded-full text-[10px] font-heading font-bold tracking-wider shadow-lg ${s.badgeClass}`}>
                   {s.badge}
                 </span>
               </div>
@@ -153,10 +163,9 @@ const ServicesSection = () => {
               <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6 z-20">
                 {/* Icon chip */}
                 <div
-                  className="w-10 h-10 rounded-xl flex items-center justify-center mb-3 backdrop-blur-sm border border-white/[0.08] group-hover:scale-110 transition-transform duration-300"
-                  style={{ backgroundColor: ACCENT_ALPHA }}
+                  className={`w-10 h-10 rounded-xl flex items-center justify-center mb-3 backdrop-blur-sm border border-white/[0.08] group-hover:scale-110 transition-transform duration-300 ${s.iconBgClass}`}
                 >
-                  <s.icon size={18} style={{ color: ACCENT }} />
+                  <s.icon size={18} className={s.iconClass} />
                 </div>
 
                 <h3 className="font-heading text-white text-base md:text-lg font-bold tracking-tight leading-snug mb-1">

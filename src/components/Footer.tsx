@@ -6,7 +6,7 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <span className="font-heading font-extrabold text-2xl text-primary-foreground tracking-tight">
-              Easy<span className="text-secondary">Events</span> Group
+              Easy<span className="text-gradient-festive">Events</span> Group
             </span>
             <p className="text-primary-foreground/50 text-sm mt-1.5">
               Genève · Suisse romande
@@ -21,17 +21,17 @@ const Footer = () => {
             <div>
               <p className="text-primary-foreground/40 text-xs uppercase tracking-widest font-semibold mb-3">Nos services</p>
               <div className="flex flex-col gap-2">
-                <a href="#services" className="text-primary-foreground/60 hover:text-secondary transition-colors">EasyFlair</a>
-                <a href="#services" className="text-primary-foreground/60 hover:text-secondary transition-colors">EasyFlash</a>
-                <a href="#services" className="text-primary-foreground/60 hover:text-secondary transition-colors">EasyChallenge</a>
+                <a href="#services" className="text-primary-foreground/60 hover:text-easyflair transition-colors">EasyFlair</a>
+                <a href="#services" className="text-primary-foreground/60 hover:text-easyflash transition-colors">EasyFlash</a>
+                <a href="#services" className="text-primary-foreground/60 hover:text-easychallenge transition-colors">EasyChallenge</a>
               </div>
             </div>
             <div>
               <p className="text-primary-foreground/40 text-xs uppercase tracking-widest font-semibold mb-3">Entreprise</p>
               <div className="flex flex-col gap-2">
-                <a href="#targets" className="text-primary-foreground/60 hover:text-secondary transition-colors">Pour qui ?</a>
-                <a href="#showcase" className="text-primary-foreground/60 hover:text-secondary transition-colors">Réalisations</a>
-                <a href="#cta-final" className="text-primary-foreground/60 hover:text-secondary transition-colors">Contact</a>
+                <a href="#targets" className="text-primary-foreground/60 hover:text-easytoilets transition-colors">Pour qui ?</a>
+                <a href="#showcase" className="text-primary-foreground/60 hover:text-easyflash transition-colors">Réalisations</a>
+                <a href="#cta-final" className="text-primary-foreground/60 hover:text-easyrelax transition-colors">Contact</a>
               </div>
             </div>
           </div>
