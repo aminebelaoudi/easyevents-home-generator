@@ -15,7 +15,7 @@ import easyboxImg from "@/assets/easy box.png";
 import easybox360Img from "@/assets/EasyBox 360.png";
 import easyboxMiroirImg from "@/assets/EasyBox Miroir.png";
 
-/* ─── Products ─────────────────────────────────────────── */
+/* ───My Products ─────────────────────────────────────────── */
 const products = [
   {
     id: "easybox-iris",
